@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Set character set and viewport for responsiveness -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Page title -->
     <title>UWE Smart Learning</title>
+
+    <!-- Preconnect to Google Fonts API -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Import Poppins font styles from Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Link to custom CSS file -->
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='styles/stylesApp.css') }}"
     />
+
+    <!-- Bootstrap CSS link with integrity and crossorigin attributes -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+
+    <!-- Bootstrap JavaScript bundle with integrity and crossorigin attributes -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -27,8 +40,10 @@
     ></script>
   </head>
   <body>
+    <!-- Navigation bar -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class="container-fluid">
+        <!-- UWE logo linked to UWE portal -->
         <a class="navbar-brand" href="https://newmy.uwe.ac.uk">
           <img
             src="{{ url_for('static', filename='images/uweLogo.png') }}"
@@ -38,15 +53,20 @@
             alt="UWE Logo"
           />
         </a>
+        <!-- Smart Learning App title -->
         <span class="navbar-text col-sm-6"> UWE Smart Learning App </span>
+        <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
+            <!-- Logout link -->
             <li class="nav-item col-sm-6">
               <a class="nav-link" href="/">Logout</a>
             </li>
+            <!-- ChatGPT link -->
             <li class="nav-item col-sm-6">
               <a class="nav-link" href="https://chat.openai.com">ChatGPT</a>
             </li>
+            <!-- Blackboard link -->
             <li class="nav-item col-sm-6">
               <a class="nav-link" href="https://blackboard.uwe.ac.uk/ultra"
                 >Blackboard</a
@@ -56,17 +76,23 @@
         </div>
       </div>
     </nav>
+
+    <!-- User and API response containers -->
     <div class="response-container">
+      <!-- User response box -->
       <div class="user-response-box">
         <p>User Input:</p>
+        <!-- User messages list -->
         <ul id="user-messages">
           {% for message in user_messages %}
           <li class="user-message">{{ message }}</li>
           {% endfor %}
         </ul>
       </div>
+      <!-- API response box -->
       <div class="api-response-box">
         <p>API Response:</p>
+        <!-- API messages list -->
         <ul id="api-messages">
           {% for message in api_messages %}
           <li class="api-message">{{ message }}</li>
@@ -75,20 +101,29 @@
       </div>
     </div>
 
+    <!-- User input form -->
     <form class="user-input-form" method="POST" action="{{ url_for('login') }}">
+      <!-- User input label and text input field -->
       <label for="userInput">Enter your text:</label>
       <input type="text" id="userInput" name="userInput" />
+
+      <!-- Submit button calling storeMessage() function -->
       <button type="submit" onclick="storeMessage()">Submit</button>
+
+      <!-- Clear messages button linked to clear_messages route -->
       <a href="{{ url_for('clear_messages') }}"
         ><button type="button">Clear Messages</button></a
       >
     </form>
 
+    <!-- JavaScript section -->
     <script>
+      // Function to store user messages (not provided in the code)
       function storeMessage() {
         // ... (your existing storeMessage() function remains unchanged)
       }
 
+      // Function to clear both user and API messages
       function clearMessages() {
         var userMessages = document.getElementById("user-messages");
         var apiMessages = document.getElementById("api-messages");
@@ -102,9 +137,9 @@
           apiMessages.removeChild(apiMessages.firstChild);
         }
       }
-      /* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
 
+      /* When the user clicks on the button,
+      toggle between hiding and showing the dropdown content */
       function myFunction() {
         document.getElementById("menu").classList.toggle("show");
       }
