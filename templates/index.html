@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/styles.css') }}"
+    />
+    <title>UWE Smart Learning App</title>
+  </head>
+  <body>
+    <a href="https://newmy.uwe.ac.uk">
+      <img
+        src="{{ url_for('static', filename='images/uweLogo.png') }}"
+        width="160vh"
+        height="70vh"
+      />
+    </a>
+    <div class="container">
+      <div class="box">
+        <div class="above-form">
+          <h1>UWE Smart learning App</h1>
+        </div>
+        <form action="ITPApp" method="post">
+          <label for="username">Username or email:</label><br />
+          <input type="text" id="username" name="username" /><br />
+          <label for="password">Password:</label><br />
+          <input type="password" id="password" name="password" /><br />
+          <label for="rememberMe">Remember me?</label>
+          <input type="checkbox" id="rememberMe" name="rememberMe" />
+          <input type="submit" value="Login" />
+          <a href="ITPUWE.html"
+            ><input type="button" value="Login with UWE"
+          /></a>
+          <p><a href="forgotPassword.html">Forgot Password?</a></p>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/stylesApp.css') }}"
+    />
+  </head>
+  <body>
+    <a href="https://newmy.uwe.ac.uk">
+      <img
+        src="{{ url_for('static', filename='images/uweLogo.png') }}"
+        width="160vh"
+        height="70vh"
+      />
+    </a>
+    <div class="dropdown">
+      <img
+        id="menuImg"
+        src="{{ url_for('static', filename='images/menuIcon.png') }}"
+        width="40px"
+        height="40px"
+        onclick="myFunction()"
+        class="dropbtn"
+      />
+      <div id="menu" class="menu_content">
+        <a href="https://chat.openai.com">ChatGPT</a>
+        <a href="/">Logout</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="box">
+        <div class="top-middle">
+          <h1>UWE Smart learning App</h1>
+        </div>
+      </div>
+    </div>
+    <div class="response-container">
+      <div class="user-response-box">
+        <p>User Input:</p>
+        <ul id="user-messages">
+          {% for message in user_messages %}
+          <li class="user-message">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="api-response-box">
+        <p>API Response:</p>
+        <ul id="api-messages">
+          {% for message in api_messages %}
+          <li class="api-message">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    <form class="user-input-form" method="POST" action="{{ url_for('login') }}">
+      <label for="userInput">Enter your text:</label>
+      <input type="text" id="userInput" name="userInput" />
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+      function myFunction() {
+        document.getElementById("menu").classList.toggle("show");
+      }
+
+      // Close the dropdown menu if the user clicks outside of it
+      window.onclick = function (event) {
+        if (!event.target.matches(".dropbtn")) {
+          var dropdowns = document.getElementsByClassName("menu_content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove("show");
+            }
+          }
+        }
+      };
+    </script>
+  </body>
+</html>

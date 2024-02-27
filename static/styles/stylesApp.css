@@ -1,0 +1,110 @@
+body {
+    font-family: poppins;
+    font-weight: 200;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+  }
+  
+.dropbtn { 
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #menuImg {
+  float: right;
+  }
+  
+  
+  .menu_content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    right: 0;
+    z-index: 1;
+  }
+  
+  .menu_content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+  
+  .user-input-form {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f1f1f1; /* Add background color */
+  }
+  
+  .user-input-form label,
+  .user-input-form input,
+  .user-input-form button {
+    width: 100%; /* Make input and button full width */
+    box-sizing: border-box;
+  }
+  
+  .user-input-form input {
+    padding: 10px; /* Adjust padding as needed */
+  }
+  
+  .user-input-form button {
+    padding: 10px;
+    background-color: #4caf50; /* Add background color for the button */
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .user-input-form button:hover {
+    background-color: #45a049; /* Change button color on hover */
+  }
+
+  .response-container {
+    display: flex;
+  }
+  
+  .user-response-box,
+  .api-response-box {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+  }
+  
+  .user-message,
+  .api-message {
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .user-message {
+    background-color: #e6f7ff;
+  }
+  
+  .api-message {
+    background-color: #f0f0f0;
+    text-align: right;
+  }
