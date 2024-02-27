@@ -24,10 +24,10 @@ def login():
             user_messages.append(user_input)
 
             # Simulate API response
-            if user_input.lower() == 'hello':
+            if user_input.lower() == 'I need help with Python':
                 api_response = 'Hello from the API!'
             else:
-                api_response = 'API response for: ' + user_input
+                api_response = 'Here is what i found for Python, https://www.codecademy.com/catalog/language/python'
 
             # Store API response in messages list
             api_messages.append(api_response)
