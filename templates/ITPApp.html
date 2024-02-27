@@ -28,30 +28,32 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a href="https://newmy.uwe.ac.uk">
-              <img
-                src="{{ url_for('static', filename='images/uweLogo.png') }}"
-                width="140vh"
-                height="80vh"
-              />
-            </a>
-            <a class="navbar-brand">UWE Smart Learning App</a>
-          </li>
-          <li class="nav-item col-sm-6 row-sm-2">
-            <a class="nav-link" href="/">Logout</a>
-          </li>
-          <li class="nav-item col-sm-6 row-sm-4">
-            <a class="nav-link" href="https://chat.openai.com">ChatGPT</a>
-          </li>
-          <li class="nav-item col-sm-4 row-sm-4">
-            <a class="nav-link" href="https://blackboard.uwe.ac.uk/ultra"
-              >Blackboard</a
-            >
-          </li>
-        </ul>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://newmy.uwe.ac.uk">
+          <img
+            src="{{ url_for('static', filename='images/uweLogo.png') }}"
+            width="140vh"
+            height="80vh"
+            class="d-inline-block align-top"
+            alt="UWE Logo"
+          />
+        </a>
+        <span class="navbar-text col-sm-6"> UWE Smart Learning App </span>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item col-sm-6">
+              <a class="nav-link" href="/">Logout</a>
+            </li>
+            <li class="nav-item col-sm-6">
+              <a class="nav-link" href="https://chat.openai.com">ChatGPT</a>
+            </li>
+            <li class="nav-item col-sm-6">
+              <a class="nav-link" href="https://blackboard.uwe.ac.uk/ultra"
+                >Blackboard</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
     <div class="response-container">
