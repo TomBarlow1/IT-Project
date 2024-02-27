@@ -66,11 +66,33 @@
     <form class="user-input-form" method="POST" action="{{ url_for('login') }}">
       <label for="userInput">Enter your text:</label>
       <input type="text" id="userInput" name="userInput" />
-      <button type="submit">Submit</button>
+      <button type="submit" onclick="storeMessage()">Submit</button>
+      <a href="{{ url_for('clear_messages') }}"
+        ><button type="button">Clear Messages</button></a
+      >
     </form>
+
     <script>
+      function storeMessage() {
+        // ... (your existing storeMessage() function remains unchanged)
+      }
+
+      function clearMessages() {
+        var userMessages = document.getElementById("user-messages");
+        var apiMessages = document.getElementById("api-messages");
+
+        // Clear both user and API messages
+        while (userMessages.firstChild) {
+          userMessages.removeChild(userMessages.firstChild);
+        }
+
+        while (apiMessages.firstChild) {
+          apiMessages.removeChild(apiMessages.firstChild);
+        }
+      }
       /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
+
       function myFunction() {
         document.getElementById("menu").classList.toggle("show");
       }

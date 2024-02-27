@@ -32,8 +32,24 @@ def login():
             # Store API response in messages list
             api_messages.append(api_response)
 
+            # Check if the number of messages exceeds 10 and remove the oldest one
+            if len(user_messages) > 10:
+                user_messages.pop(0)
+
+            if len(api_messages) > 10:
+                api_messages.pop(0)
+
             return render_template('ITPApp.html', user_input=user_input, user_messages=user_messages, api_messages=api_messages)
 
+    return render_template('ITPApp.html', user_messages=user_messages, api_messages=api_messages)
+
+@app.route('/clear_messages')
+def clear_messages():
+    global user_messages
+    global api_messages
+    # Clear all messages permanently
+    user_messages = []
+    api_messages = []
     return render_template('ITPApp.html', user_messages=user_messages, api_messages=api_messages)
 
 if __name__ == '__main__':
