@@ -1,4 +1,9 @@
-
+body {
+  background: linear-gradient(rgb(0, 0, 0), rgb(11, 132, 145));
+  color: white; 
+  font-family: poppins;
+    font-weight: 200;
+}
 
 .container {
   display: flex;
@@ -11,12 +16,14 @@
   text-align: center;
   padding: 20px;
   border: 1px solid #ccc;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  color: white; /* Set the text color for the box */
 }
 
 h1 {
   margin: 0;
   font-size: 2rem;
+  color: white; /* Set the text color for h1 */
 }
 
 form {
@@ -29,6 +36,7 @@ label {
   display: block;
   margin-top: 20px;
   font-weight: bold;
+  color: white; /* Set the text color for labels */
 }
 
 input[type="text"],
@@ -39,6 +47,7 @@ input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
+  color: white; /* Set the text color for input fields */
 }
 
 input[type="submit"],
@@ -46,7 +55,7 @@ input[type="button"] {
   width: 100%;
   padding: 10px;
   margin-top: 20px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;
@@ -65,14 +74,15 @@ input[type="checkbox"] {
 
 p {
   margin-top: 10px;
+  color: white; /* Set the text color for paragraphs */
 }
 
 a {
-  color: #4CAF50;
+  color: #4caf50;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+  color: white; /* Set the text color for the link on hover */
 }
-
