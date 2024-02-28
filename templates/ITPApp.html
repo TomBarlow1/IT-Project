@@ -170,12 +170,11 @@
         }
       };
 
-      // Simulate typing effect for API messages on page load
+      // Simulate typing effect for the most recent API message on page load
       document.addEventListener("DOMContentLoaded", function () {
         var apiMessages = document.getElementsByClassName("api-message");
-
-        for (var i = 0; i < apiMessages.length; i++) {
-          typeApiMessage(apiMessages[i]);
+        if (apiMessages.length > 0) {
+          typeApiMessage(apiMessages[apiMessages.length - 1]);
         }
       });
     </script>
