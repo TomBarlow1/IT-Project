@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 
 # Create a Flask web application instance
 app = Flask(__name__)
@@ -10,6 +10,15 @@ api_messages = []
 # Route for the home page
 @app.route('/')
 def index():
+    global user_messages
+    global api_messages
+
+    # Check if the "logout" query parameter is present
+    if request.args.get('logout') == 'true':
+        # Clear all messages permanently
+        user_messages = []
+        api_messages = []
+
     return render_template('index.html')
 
 # Route for the ITPApp page, handles both GET and POST requests
