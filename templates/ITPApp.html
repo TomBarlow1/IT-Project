@@ -78,6 +78,7 @@
     </nav>
 
     <!-- User and API response containers -->
+
     <div class="response-container">
       <!-- User response box -->
       <div class="user-response-box">
@@ -118,6 +119,24 @@
 
     <!-- JavaScript section -->
     <script>
+      // Function to simulate typing effect for API messages
+      function typeApiMessage(apiMessageElement) {
+        var message = apiMessageElement.textContent;
+        apiMessageElement.innerHTML = ""; // Clear existing content
+
+        var index = 0;
+
+        function type() {
+          if (index < message.length) {
+            apiMessageElement.innerHTML += message.charAt(index);
+            index++;
+            setTimeout(type, 50); // Adjust the delay (in milliseconds) for typing speed
+          }
+        }
+
+        type();
+      }
+
       // Function to store user messages (not provided in the code)
       function storeMessage() {
         // ... (your existing storeMessage() function remains unchanged)
@@ -128,18 +147,19 @@
         var userMessages = document.getElementById("user-messages");
         var apiMessages = document.getElementById("api-messages");
 
-        // Clear both user and API messages
+        // Clear user messages
         while (userMessages.firstChild) {
           userMessages.removeChild(userMessages.firstChild);
         }
 
+        // Clear API messages
         while (apiMessages.firstChild) {
           apiMessages.removeChild(apiMessages.firstChild);
         }
       }
 
       /* When the user clicks on the button,
-      toggle between hiding and showing the dropdown content */
+  toggle between hiding and showing the dropdown content */
       function myFunction() {
         document.getElementById("menu").classList.toggle("show");
       }
@@ -157,6 +177,15 @@
           }
         }
       };
+
+      // Simulate typing effect for API messages on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        var apiMessages = document.getElementsByClassName("api-message");
+
+        for (var i = 0; i < apiMessages.length; i++) {
+          typeApiMessage(apiMessages[i]);
+        }
+      });
     </script>
   </body>
 </html>
