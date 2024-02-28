@@ -39,32 +39,22 @@ label {
   color: white; /* Set the text color for labels */
 }
 
-input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  color: white; /* Set the text color for input fields */
-}
-
 input[type="submit"],
 input[type="button"] {
   width: 100%;
   padding: 10px;
   margin-top: 20px;
-  background-color: #4caf50;
+  background: linear-gradient(rgb(0, 0, 0), rgb(11, 132, 145));
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background 0.3s ease; /* Smooth transition for background change */
 }
 
 input[type="submit"]:hover,
 input[type="button"]:hover {
-  background-color: #3e8e41;
+  background: linear-gradient(rgb(11, 132, 145), rgb(0, 0, 0));
 }
 
 /* Added styles for Remember me and Forgot Password link */

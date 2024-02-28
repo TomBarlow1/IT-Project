@@ -94,3 +94,16 @@ body::before {
   background-color: transparent; /* Set background to transparent */
   color: white; /* Set text color to white */
 }
+.user-input-form button {
+  padding: 10px;
+  background: linear-gradient(rgb(0, 0, 0), rgb(11, 132, 145));
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease; /* Smooth transition for background change */
+}
+
+.user-input-form button:hover {
+  background: linear-gradient(rgb(11, 132, 145), rgb(0, 0, 0));
+}
