@@ -79,24 +79,16 @@
 
     <!-- User and API response containers -->
 
-    <div class="response-container">
-      <!-- User response box -->
-      <div class="user-response-box">
-        <p>User Input:</p>
-        <!-- User messages list -->
-        <ul id="user-messages">
-          {% for message in user_messages %}
-          <li class="user-message">{{ message }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      <!-- API response box -->
-      <div class="api-response-box">
-        <p>API Response:</p>
-        <!-- API messages list -->
-        <ul id="api-messages">
-          {% for message in api_messages %}
-          <li class="api-message">{{ message }}</li>
+    <div class="conversation-container" style="height: 400px; overflow-y: auto">
+      <!-- Conversation box -->
+      <div class="conversation-box">
+        <!-- User and API conversation list -->
+        <ul id="conversation">
+          {% for i in range(user_messages|length) %}
+          <!-- User message -->
+          <li class="user-message">{{ user_messages[i] }}</li>
+          <!-- API response -->
+          <li class="api-message">{{ api_messages[i] }}</li>
           {% endfor %}
         </ul>
       </div>
